@@ -1,0 +1,4 @@
+Bundle-Name: foo-web
+Bundle-SymbolicName: com.liferay.samples.fbo.foo
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.samples.fbo.foo.constants

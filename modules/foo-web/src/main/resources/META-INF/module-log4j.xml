@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<Configuration strict="true">
+
+	<Appenders>
+	
+		<Appender filePattern="@liferay.home@/logs/foo.%d{yyyy-MM-dd}.log" ignoreExceptions="false" name="FOO_LOG" type="RollingFile">
+			<Layout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%t][%c{1}:%L] %m%n" type="PatternLayout" />
+			<TimeBasedTriggeringPolicy />
+			<DirectWriteRolloverStrategy />
+		</Appender>
+	
+	</Appenders>
+
+	<Loggers>
+		
+		<!-- additivity="false" prevents the log to be written to another appender -->
+		<Logger level="INFO" name="com.liferay.samples.fbo.foo.portlet" additivity="false">
+			<AppenderRef ref="FOO_LOG" />
+		</Logger>
+		
+	</Loggers>
+	
+</Configuration>
